@@ -43,13 +43,13 @@ int main(void)
     {
         // Performing a burst read from the device
 		
-		HAL_I2C_Master_Receive(&hi2c1, (uint16_t)0xD0, &read_data[0], 1, HAL_MAX_DELAY);		// seconds
-		HAL_I2C_Master_Receive(&hi2c1, (uint16_t)0xD0, &read_data[1], 1, HAL_MAX_DELAY);		// minutes
-		HAL_I2C_Master_Receive(&hi2c1, (uint16_t)0xD0, &read_data[2], 1, HAL_MAX_DELAY);		// hours
-		HAL_I2C_Master_Receive(&hi2c1, (uint16_t)0xD0, &read_data[3], 1, HAL_MAX_DELAY);		// day
-		HAL_I2C_Master_Receive(&hi2c1, (uint16_t)0xD0, &read_data[4], 1, HAL_MAX_DELAY);		// date
-		HAL_I2C_Master_Receive(&hi2c1, (uint16_t)0xD0, &read_data[5], 1, HAL_MAX_DELAY);		// month
-		HAL_I2C_Master_Receive(&hi2c1, (uint16_t)0xD0, &read_data[6], 1, HAL_MAX_DELAY);		// year
+		HAL_I2C_Master_Receive(&hi2c1, (uint16_t)0xD1, &read_data[0], 1, HAL_MAX_DELAY);		// seconds
+		HAL_I2C_Master_Receive(&hi2c1, (uint16_t)0xD1, &read_data[1], 1, HAL_MAX_DELAY);		// minutes
+		HAL_I2C_Master_Receive(&hi2c1, (uint16_t)0xD1, &read_data[2], 1, HAL_MAX_DELAY);		// hours
+		HAL_I2C_Master_Receive(&hi2c1, (uint16_t)0xD1, &read_data[3], 1, HAL_MAX_DELAY);		// day
+		HAL_I2C_Master_Receive(&hi2c1, (uint16_t)0xD1, &read_data[4], 1, HAL_MAX_DELAY);		// date
+		HAL_I2C_Master_Receive(&hi2c1, (uint16_t)0xD1, &read_data[5], 1, HAL_MAX_DELAY);		// month
+		HAL_I2C_Master_Receive(&hi2c1, (uint16_t)0xD1, &read_data[6], 1, HAL_MAX_DELAY);		// year
 
         printf("Date : %d", read_data[4]);
 		printf("\n");
