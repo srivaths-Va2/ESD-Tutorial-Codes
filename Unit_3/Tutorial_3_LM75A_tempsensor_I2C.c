@@ -17,7 +17,7 @@ static void MX_GPIO_Init(void);
 static void MX_I2C1_Init(void);
 
 
-// Initialisation function for I2C handler. Returns 1 for successful initialization. Returns 0 for unsuccessful initialization
+// Initialisation function for I2C handler. Returns 0 for successful initialization. Returns 1 for unsuccessful initialization
 uint32_t I2C_Init(void)			
 {
 	if(HAL_I2C_Init(&hi2c1) == HAL_OK)
