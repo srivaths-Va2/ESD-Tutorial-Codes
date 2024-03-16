@@ -13,12 +13,10 @@ Task 4 runs independently and is not affected by the operations of task 1 and ta
 
 #define SEMAPHORE_COUNT 4
 
-// task funtions
+// Task IDS of task 1, task 2, task 3 and task 4
 
-__task void task1(void);
-__task void task2(void);
-__task void task3(void);
-__task void task4(void);
+OS_TID id1, id2, id3, id4;
+
 
 // Initialise a list to store sempahore objects
 OS_SEM semaphores[SEMAPHORE_COUNT];
@@ -26,6 +24,14 @@ OS_SEM semaphores[SEMAPHORE_COUNT];
 // Task-1 functionality
 __task void task1(void)
 {
+    // outputting the id1 of task 1
+    id1 = os_tsk_self();
+
+    // Creating task 2, task 3 and task 4 in runtime of task 1
+    id2 = os_tsk_create(task2, 1);
+    id3 = os_tsk_create(task3, 1);
+    id4 = os_tsk_create(task4, 1);
+
     while(1)
     {
         // Write any kind of code to process for task1
