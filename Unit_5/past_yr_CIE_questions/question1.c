@@ -47,7 +47,7 @@ __task void task1(void)
         GLCD_SetBackColor(GLCD_BG_RED);
 
         // Initialising text RVCE
-        char[5] text = "RVCE";
+        char text[5] = "RVCE";
 
         // Printing RVCE on the GLCD display
         GLCD_DisplayString(0, 0, GLCD_FONT_MEDIUM, text);
@@ -59,7 +59,7 @@ __task void task1(void)
         os_sem_send(&semaphore[0]);
 
         // wait for task2 to complete
-        os_wait(&semamphore[1], 0xFFFF);
+        os_sem_wait(&semamphore[1], 0xFFFF);
     }
 
 
